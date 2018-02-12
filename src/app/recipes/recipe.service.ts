@@ -24,6 +24,10 @@ export class RecipeService {
     return this.recipes.slice(); //don't leak "recipes" reference
   }
 
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
+
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.shoppingListServive.addIngredients(ingredients);
   }

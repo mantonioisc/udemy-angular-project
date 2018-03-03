@@ -22,6 +22,11 @@ export class RecipeService {
 
   constructor(private shoppingListServive: ShoppingListService) {}
 
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
   getRecipes() {
     return this.recipes.slice(); //don't leak "recipes" reference
   }
